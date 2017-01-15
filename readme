@@ -1,0 +1,55 @@
+A simple demonstartion of a node.js app built using express, jade, and twitter bootstrap. The following free plotting programs have been incorporated: Flot, Flotr2, Google Chart Tools, and Dygraphs.
+
+After download install dependencies: npm install
+Then start app: node app.js
+
+
+================= NOTAS - PDF =======================
+
+Base git: https://github.com/tsholk/plotting
+
+
+esta versao deveria implementar um nodejs server que desse um html com graficos usando a lib dycharts.
+os charts deverão pedir um csv processado em background pelo servidor.
+
+compreendi mais ou menos a cena dos routes: como adicionar uma nova view e fazer route da mm na app e depois no metodo das routes, fazer o render da pag .jade
+    usar pag html para poder editar bem os scripts javascript
+
+Estou a admitir que tenho um csv que foi gerado por uma funcao nao bloqueante (resultado da query que queria) e tenho o csv disponivel para enviar para o cliente para fazer load do grafico.
+    NOTA: ver como usar um tipo de variavel para guardar os dados de forma comprimida
+
+Como enviar o ficheiro .csv do servidor para o cliente, para q este o use como data no pedido?
+     @index.js --> como fazer?
+        // ADDED THIS
+        exports.csv = function(req, res){
+            console.log('Sending file /public/4CO00871-RRC_Estab_200days.csv')
+            res.sendfile('/public/4CO00871-RRC_Estab_200days.csv', req)
+        };
+       usar sockets.io
+
+
+
+How to save session information??
+    Mongo DB --> session information
+    User DB for user management & role management.
+    http://stackoverflow.com/questions/11534412/any-good-user-management-framework-for-node-js
+    ===>>> node-sspi
+        Store hashed passwords in MongoDB (create user change form);
+
+
+Como guardar relatorios feitos? Espaço de quota para cada user no servidor
+
+
+
+Definir perfis com cells para avaliar alarmes.
+Definir alarmes com base em indexes (Splunk)
+
+
+
+**** NOTAS SOBRE O DASHBOARD ****
+
+    Podemos separar os KPI's / variaveis imporantes assim:
+    (horarias ou diarias) X (KPI's com somas de todos os elementos ou KPI's stacked para cada elemento) X (Nr de Elementos)
+    Cada KPI vai ter um template de query e vai dar como query final uma cena q é o cruzamento do q o user disse
+
+    Converter o JADE para HTML (separar o javascript aparte para melhor programar. escolher onde o colocar nas pastas do servidor)

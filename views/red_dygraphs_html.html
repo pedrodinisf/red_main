@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RED - dygraphs Engine Implementation</title>
+</head>
+<body>
+
+<h1>
+    Main Ideas
+</h1>
+
+<p>
+
+    TODO:
+
+    - Clean / archive code from plotting-master that will no longer be needed. This will be the start of RED.
+    - Activar o engine no  express.js para fazer render de html files.
+
+    A ideia é:
+
+    1º) Implementar dychart render com nodejs
+    2º) Usar primeiro uma var data q é gerada client side para gerar uma serie de pontos para fazer plot
+    3º) Fazer load de um csv com os dados que queremos para fazer plotting
+    4º) Engine de enviar os dados csv processados da query do Servidor para Cliente:
+        Csv é o melhor modo?
+        Como enviar? Asincrono? socket.io ? filestream vs file?
+        Usar engine de compressao para
+
+    ---------
+    5º) Como criar uma sessão para cada user? Guardar as sessoes server side --> Session file storage / management (nodejs)
+    https://www.google.pt/search?q=store+session+data+files+server&rlz=1C1CHZL_enPT695PT695&oq=store+session+data+files+server+&aqs=chrome..69i57.8133j0j7&sourceid=chrome&ie=UTF-8#safe=off&q=nodejs+store+session+data+files+server
+    http://piwik.org/faq/how-to-install/faq_133/
+    https://www.npmjs.com/package/session-file-store
+
+    http://stackoverflow.com/questions/5765777/nodejs-how-to-create-and-read-session-with-express
+
+    http://stackoverflow.com/questions/20612275/how-to-use-req-session-data-in-an-other-javascript-file-expressjs
+
+    http://stackoverflow.com/questions/22186481/data-and-string-comparison-with-nodejs
+
+    ---------
+
+    5º) Fazer user management (Portal Inicial):
+        SSO integration (AD) -> match with MongoDB (User collection: ID, USER_ID, group1, group2, group3, department, Internal (YES/NO), roles/permissions
+        https://www.npmjs.com/package/node-sspi
+      https://mongodb.github.io/node-mongodb-native/2.0/reference/connecting/authenticating/
+
+</p>
+
+</body>
+</html>
